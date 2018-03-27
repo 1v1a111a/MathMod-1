@@ -59,28 +59,33 @@ mod3=lm(h2o_flux ~ (Tau + rand_err_Tau + H + rand_err_H + LE +
                       rand_err_LE + co2_flux + h2o_flux + rand_err_h2o_flux +  
                       co2_molar_density + h2o_time_lag + air_molar_volume +
                       air_density + es + RH + VPD + u_star_ + T_star_ + 
-                      un_Tau + un_H)^2-co2_flux:co2_molar_density-rand_err_h2o_flux
-        -co2_molar_density:h2o_time_lag - co2_molar_density:RH - co2_molar_density:T_star_ -
-          co2_molar_density:T_star_ - co2_molar_density:un_Tau - co2_molar_density:un_H - h2o_time_lag:RH  -  
-          h2o_time_lag:VPD - h2o_time_lag:u_star_ - h2o_time_lag:un_Tau - RH:VPD - RH:u_star_ - RH:T_star_ - 
-          RH:un_Tau - RH:un_H - VPD:u_star_ - VPD:T_star_ - u_star_:T_star_ - u_star_:un_Tau - 
-          u_star_:un_H - T_star_:un_Tau - T_star_:un_H - un_Tau:un_H, data=tbl)
+                      un_Tau + un_H)^2-co2_flux:co2_molar_density-rand_err_h2o_flux-
+                      co2_molar_density:h2o_time_lag - co2_molar_density:RH - 
+                      co2_molar_density:T_star_ - co2_molar_density:T_star_ - 
+                      co2_molar_density:un_Tau - co2_molar_density:un_H - h2o_time_lag:RH  -  
+                      h2o_time_lag:VPD - h2o_time_lag:u_star_ - h2o_time_lag:un_Tau - RH:VPD - 
+                      RH:u_star_ - RH:T_star_ - RH:un_Tau - RH:un_H - VPD:u_star_ - 
+                      VPD:T_star_ - u_star_:T_star_ - u_star_:un_Tau -  
+                      u_star_:un_H - T_star_:un_Tau - T_star_:un_H - un_Tau:un_H, data=tbl)
 anova(mod3)
 summary(mod3)
 mod4=lm(h2o_flux ~ (Tau + rand_err_Tau + H + rand_err_H + LE +  
                       rand_err_LE + co2_flux + h2o_flux + rand_err_h2o_flux +  
                       co2_molar_density + h2o_time_lag + RH + VPD + u_star_ + 
-                      T_star_ + un_Tau + un_H)^2 -co2_flux:co2_molar_density-rand_err_h2o_flux -
-          co2_molar_density:h2o_time_lag - co2_molar_density:RH - co2_molar_density:T_star_ -
-          co2_molar_density:T_star_ - co2_molar_density:un_Tau - co2_molar_density:un_H - h2o_time_lag:RH  -  
-          h2o_time_lag:VPD - h2o_time_lag:u_star_ - h2o_time_lag:un_Tau - RH:VPD - RH:u_star_ - RH:T_star_ - 
-          RH:un_Tau - RH:un_H - VPD:u_star_ - VPD:T_star_ - u_star_:T_star_ - u_star_:un_Tau - 
-          u_star_:un_H - T_star_:un_Tau - T_star_:un_H - un_Tau:un_H - h2o_flux:u_star_ - h2o_flux:T_star_ - 
-          rand_err_h2o_flux:u_star_ - rand_err_h2o_flux:T_star_  - rand_err_h2o_flux:un_H  - 
-          h2o_time_lag:T_star_ - h2o_time_lag:un_H - VPD:un_Tau - VPD:un_H - 
-          rand_err_h2o_flux:T_star_ -  rand_err_h2o_flux:un_Tau - 
-          co2_molar_density:air_molar_volume - co2_molar_density:es - 
-          co2_molar_density:VPD - h2o_time_lag:T_star_ - h2o_time_lag:un_H - 
-          air_molar_volume:air_density - air_molar_volume:u_star_ , data=tbl)
+                      T_star_ + un_Tau + un_H)^2 -co2_flux:co2_molar_density-
+                      rand_err_h2o_flux -co2_molar_density:h2o_time_lag - 
+                      co2_molar_density:RH - co2_molar_density:T_star_ -  
+                      co2_molar_density:T_star_ - co2_molar_density:un_Tau - 
+                      co2_molar_density:un_H - h2o_time_lag:RH  -  h2o_time_lag:VPD - 
+                      h2o_time_lag:u_star_ - h2o_time_lag:un_Tau - RH:VPD - RH:u_star_ - 
+                      RH:T_star_ - RH:un_Tau - RH:un_H - VPD:u_star_ - VPD:T_star_ - 
+                      u_star_:T_star_ - u_star_:un_Tau - u_star_:un_H - T_star_:un_Tau - 
+                      T_star_:un_H - un_Tau:un_H - h2o_flux:u_star_ - h2o_flux:T_star_ - 
+                      rand_err_h2o_flux:u_star_ - rand_err_h2o_flux:T_star_  - 
+                      rand_err_h2o_flux:un_H  - h2o_time_lag:T_star_ - h2o_time_lag:un_H - 
+                      VPD:un_Tau - VPD:un_H - rand_err_h2o_flux:T_star_ -  
+                      rand_err_h2o_flux:un_Tau - co2_molar_density:air_molar_volume - 
+                      co2_molar_density:es - co2_molar_density:VPD - h2o_time_lag:T_star_ - 
+                      h2o_time_lag:un_H - air_molar_volume:air_density - air_molar_volume:u_star_ , data=tbl)
 summary(mod4)
 anova(mod4)
